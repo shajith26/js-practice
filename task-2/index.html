@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>task 2</h1>
+    <table class="table">
+        <tr>
+            <th>product name</th>
+            <th>unit price</th>
+            <th>qty</th>
+            <th>action</th>
+            <th>price</th>
+        </tr>
+        <tr>
+            <td>mobile</td>
+            <td id="unitprice">35000</td>
+            <td><input type="text" id="qty" value="2"></td>
+            <td><button id="btn">calculate</button></td>
+            <td id="price"></td>
+        </tr>
+    </table>
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        function calculateprice(){
+
+        var unitprice, qty, price,
+        unitpriceEle = document.getElementById("unitprice"),
+        qtyElement= document.getElementById("qty"),
+        priceElement= document.getElementById("price");
+
+        unitprice = unitpriceEle.innerText;
+        qty = qtyElement.value;
+
+        price = unitprice * qty;
+        priceElement.innerText = price;
+        }
+        btn.addEventListener("click",calculateprice)
+
+    </script>
+</body>
+</html>
