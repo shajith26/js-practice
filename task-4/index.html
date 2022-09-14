@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    div{
+        text-align: center;
+        background-color: lightblue;
+        padding: 20px;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <div id="working">
+
+        <h2>click the input</h2>
+        <select name="" id="select">
+            <option value="opened">open</option>
+            <option value="closed">close</option>
+        </select>
+        <h1 id="display"></h1>
+        <button id="btn">enter</button>
+
+    </div>
+
+
+
+    <script>
+
+        let slct=document.getElementById("select");
+        let dsply=document.getElementById("display");
+        let button=document.getElementById("btn");
+
+        button.addEventListener("click",function(){
+            if(select.value=="opened"){
+                dsply.innerHTML="shop is opened"
+            }else if(select.value){
+                dsply.innerHTML="shop is closed"
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

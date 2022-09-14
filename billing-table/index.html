@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="bill">
+        <h1>BILLING TABLE</h1>
+        <table border="2px" width="700px" class="table">
+            <tr>
+                <th>S.NO</th>
+                <th>PRODUCT NAME</th>
+                <th>QUANTITY</th>
+                <th>UNIT PRICE</th>
+                <th>ACTUAL PRICE</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Iphone 11</td>
+                <td><select id="iselect" onchange="iphone()" value="0">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></td>
+                <td id="fprice-1">70000</td>
+                <td id="ttlamnt-1"></td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Samsung s20</td>
+                <td><select id="sselect" onchange="samsung()" value="0">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></td>
+                <td id="fprice-2">50000</td>
+                <td id="ttlamnt-2"></td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jio phone</td>
+                <td><select id="jselect" onchange="jio()" value="0">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select></td>
+                <td id="fprice-3">10000</td>
+                <td id="ttlamnt-3"></td>
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Redmi Note 20</td>
+                <td><select id="rselect" onchange="redmi()" value="0">
+                    <option value="0">0</option>
+                    <option value="1" >1</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                </select></td>
+                <td id="fprice-4">45000</td>
+                <td id="ttlamnt-4"></td>
+
+            </tr>
+            <tr>
+                <td>TOTAL</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="ttlprice"></td>
+            </tr>
+            <tr>
+                <td>TAX 10%</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="taxprice"></td>
+            </tr>
+            <tr>
+                <td>TOTAL AMOUNT</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="ttlamnt"></td>
+            </tr>
+        </table>
+    </section>
+
+
+<script>
+    let iphonettl=document.getElementById("ttlamnt-1");
+    let samsungttl=document.getElementById("ttlamnt-2");
+    let jiottl=document.getElementById("ttlamnt-3");
+    let redmittl=document.getElementById("ttlamnt-4")
+     let b=0;
+     let b1=0;
+     let b2=0;
+     let b3=0;
+
+    
+
+    let iphonef=document.getElementById("fprice-1")
+    let iphones=document.getElementById("iselect")
+    
+
+    function iphone(){
+        let s=iphones.value;
+        console.log(s);
+        let unitinner1=iphonef.innerText;
+        console.log(unitinner1)
+         b=s*unitinner1;
+        console.log(b)
+        iphonettl.innerText=b;
+        totaladd()
+    }
+
+
+    let samsungf=document.getElementById("fprice-2")
+    let sselect=document.getElementById("sselect")
+    
+
+    function samsung(){
+        let s=sselect.value;
+        console.log(s)
+        let unitinner2=samsungf.innerText
+        console.log(unitinner2)
+         b1=s*unitinner2;
+        console.log(b)
+
+        samsungttl.innerText=b1;
+        totaladd()
+    }
+
+    let jiof=document.getElementById("fprice-3")
+    let sjio=document.getElementById("jselect")
+    
+
+    function jio(){
+        let s=sjio.value;
+        console.log(s)
+        let f=jiof.innerText;
+         b2=s*f;
+
+        jiottl.innerText=b2;
+        totaladd()
+    }
+
+    let redmif=document.getElementById("fprice-4")
+    let sredmi=document.getElementById("rselect")
+    
+
+    function redmi(){
+        let s=sredmi.value;
+        let f=redmif.innerText;
+         b3=s*f;
+
+
+        redmittl.innerText=b3;
+        totaladd()
+    }
+
+    let ttlprice=document.getElementById("ttlprice")
+    let taxprice=document.getElementById("taxprice")
+    let totalamount=document.getElementById("ttlamnt")
+
+    function totaladd(){
+
+        let x=parseInt(b+b1+b2+b3);
+
+        ttlprice.innerText=x;
+
+        let tx=ttlprice.innerText/100*10;
+
+        taxprice.innerText=tx;
+
+        let finalamnt=(x+tx);
+
+        totalamount.innerText=finalamnt;
+
+    }
+
+</script>
+
+
+
+</body>
+</html>
