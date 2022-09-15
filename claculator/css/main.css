@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.calc{
+    text-align: center;
+    background-color: lightblue;
+    line-height: 40px;
+    margin: 25px 525px;
+    border-radius: 25px;
+}
+.r1 button{
+    padding: 17px;
+    margin: 5px;
+}
+.visible input{
+    width: 80%;
+    height: 33px;
+}
+.visible{
+    background-color: midnightblue;
+}
